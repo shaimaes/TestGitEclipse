@@ -1,0 +1,9 @@
+fr\formation\inti\dao\CustomerDao.class
+fr\formation\inti\controller\SessionController.class
+fr\formation\inti\controller\LoginController.class
+fr\formation\inti\dao\CustomerDaoImpl.class
+fr\formation\inti\entity\Customer.class
+fr\formation\inti\service\CustomerService.class
+fr\formation\inti\dao\GenericDaoImpl.class
+fr\formation\inti\dao\GenericDao.class
+fr\formation\inti\service\CustomerServiceImpl.class
