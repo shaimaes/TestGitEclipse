@@ -50,6 +50,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 		dao.beginTransaction();
 		dao.deleteById(id);
 		dao.commit(true);
+		
 	}
 
 }

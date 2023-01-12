@@ -24,27 +24,41 @@ import javax.persistence.TemporalType;
 @Table(name = "employee", catalog = "bd_example2")
 public class Employee implements java.io.Serializable {
 
-	private Integer empId;
-	private String FIRST_NAME;
-	private String LAST_NAME;
-	private Date START_DATE;
+	private Integer empId;	
+	private Employee employee;
+	private Date endDate;
+	private String firstName;
+	private String lastName;
+	private Date startDate;
 	private String title;
+	private Set<Employee> employees = new HashSet<Employee>(0);
 
 	public Employee() {
 	}
 
-	public Employee(String FIRST_NAME, String LAST_NAME, Date START_DATE) {
-		this.FIRST_NAME = FIRST_NAME;
-		this.LAST_NAME = LAST_NAME;
-		this.START_DATE = START_DATE;
+	public Employee(String firstName, String lastName, Date startDate) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.startDate = startDate;
+	}
+	
+	public Employee(String firstName, String lastName, Date startDate, String title) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.startDate = startDate;
+		this.title = title;
 	}
 
-	public Employee(String FIRST_NAME,String LAST_NAME, Date START_DATE, String title) {
-	
-		this.FIRST_NAME = FIRST_NAME;
-		this.LAST_NAME = LAST_NAME;
-		this.START_DATE = START_DATE;
+	public Employee(Employee employee, Date endDate, String firstName,
+			String lastName, Date startDate, String title, Set<Employee> employees) {
+		
+		this.employee = employee;
+		this.endDate = endDate;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.startDate = startDate;
 		this.title = title;
+		this.employees = employees;
 	}
 
 	@Id
@@ -59,33 +73,53 @@ public class Employee implements java.io.Serializable {
 		this.empId = empId;
 	}
 
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "SUPERIOR_EMP_ID")
+	public Employee getEmployee() {
+		return this.employee;
+	}
+
+	public void setEmployee(Employee employee) {
+		this.employee = employee;
+	}
+
+	@Temporal(TemporalType.DATE)
+	@Column(name = "END_DATE", length = 10)
+	public Date getEndDate() {
+		return this.endDate;
+	}
+
+	public void setEndDate(Date endDate) {
+		this.endDate = endDate;
+	}
 
 	@Column(name = "FIRST_NAME", nullable = false, length = 20)
 	public String getFirstName() {
-		return this.FIRST_NAME;
+		return this.firstName;
 	}
 
-	public void setFirstName(String FIRST_NAME) {
-		this.FIRST_NAME = FIRST_NAME;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 
 	@Column(name = "LAST_NAME", nullable = false, length = 20)
 	public String getLastName() {
-		return this.LAST_NAME;
+		return this.lastName;
 	}
 
-	public void setLastName(String LAST_NAME) {
-		this.LAST_NAME = LAST_NAME;
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
 	@Temporal(TemporalType.DATE)
 	@Column(name = "START_DATE", nullable = false, length = 10)
 	public Date getStartDate() {
-		return this.START_DATE;
+		return this.startDate;
 	}
 
-	public void setStartDate(Date START_DATE) {
-		this.START_DATE = START_DATE;
+	public void setStartDate(Date startDate) {
+		this.startDate = startDate;
 	}
 
 	@Column(name = "TITLE", length = 20)
@@ -95,6 +129,15 @@ public class Employee implements java.io.Serializable {
 
 	public void setTitle(String title) {
 		this.title = title;
+	}
+
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "employee")
+	public Set<Employee> getEmployees() {
+		return this.employees;
+	}
+
+	public void setEmployees(Set<Employee> employees) {
+		this.employees = employees;
 	}
 
 }

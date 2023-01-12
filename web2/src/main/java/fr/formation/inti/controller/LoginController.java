@@ -21,45 +21,56 @@ import fr.formation.inti.service.UserServiceImpl;
 public class LoginController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private UserService userService;
-	
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public LoginController() {
-    	 userService = new UserServiceImpl();
-        
-    }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		List<User> users = userService.findAll();
-		request.setAttribute("users", users);
-		request.getServletContext().getRequestDispatcher("/menu.html").forward(request, response);
-	return;	
+	public LoginController() {
+		userService = new UserServiceImpl();
+
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String email = request.getParameter("email");
-		String password = request.getParameter("password");
-		
-		User user = userService.findUserBy(email, password);
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+//		List<User> users = userService.findAll();
+//		request.setAttribute("users", users);
+//		request.getServletContext().getRequestDispatcher("/menu.html").forward(request, response);
+//	return;	
 
-		if(user != null) {
-			HttpSession session = request.getSession();
-			
-			request.setAttribute("user", user);
-			
+		HttpSession session = request.getSession(false);
+		if (session == null) {
+			response.sendRedirect(request.getContextPath());
+		} else {
 			request.getServletContext().getRequestDispatcher("/menu.html").forward(request, response);
 		}
-		request.setAttribute("error", "mail or password error !");
-		request.getServletContext().getRequestDispatcher("/login.html").forward(request, response);
-	
+
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String email = request.getParameter("email");
+		String password = request.getParameter("password");
+
+		User user = userService.findUserBy(email, password);
+
+		if (user != null) {
+			HttpSession session = request.getSession();
+
+			session.setAttribute("user", user);
+
+			request.getServletContext().getRequestDispatcher("/listemp").forward(request, response);
+		} else
+			// request.setAttribute("error", "mail or password error !");
+			request.getServletContext().getRequestDispatcher("/login.html").forward(request, response);
+
 	}
 
 }

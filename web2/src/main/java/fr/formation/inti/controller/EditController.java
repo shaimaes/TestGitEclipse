@@ -4,32 +4,30 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import fr.formation.inti.entity.Employee;
 import fr.formation.inti.service.EmployeeService;
 import fr.formation.inti.service.EmployeeServiceImpl;
 
 /**
- * Servlet implementation class SaveEmployeeController
+ * Servlet implementation class EditController
  */
-@WebServlet("/save")
-public class EmployeeController extends HttpServlet {
+@WebServlet("/edit")
+public class EditController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private EmployeeService eService;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public EmployeeController() {
-        this.eService = new EmployeeServiceImpl();
+    public EditController() {
+    	this.eService = new EmployeeServiceImpl();
        
     }
 
@@ -38,34 +36,27 @@ public class EmployeeController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		HttpSession session = request.getSession(false);
+		String empId = request.getParameter("id");
+		Integer id = Integer.parseInt(empId);
 		
-		if(session != null) {
-			session.invalidate();
-		}
-		response.sendRedirect(request.getContextPath());
-// -----------------------------------------------------------------------		
+		Employee employees = eService.findById(id);
 		
-		String action = request.getParameter("action");
-		if("find".equals(action)) {
-			
-			Integer id = Integer.parseInt(request.getParameter("id"));
-			Employee cust = eService.findById(id);
-			System.out.println(cust);
-		}else {
-			List<Employee> employees = eService.findAll();
-			employees.forEach(System.out::println);
-			
-		}
-			
+		request.setAttribute("emp", employees);
+		request.getServletContext().getRequestDispatcher("/jslt/Edit.jsp").forward(request, response);
+		
+		
 	}
-		
+
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+
 		String empId = request.getParameter("empId");
+		Integer id = Integer.parseInt(empId);
+		
+		Employee emp = eService.findById(id);
+		
 		String firstName = request.getParameter("firstName");
 		String lastName = request.getParameter("lastName");
 		String title = request.getParameter("title");
@@ -76,18 +67,22 @@ public class EmployeeController extends HttpServlet {
 		
 		try {
 			Date startDate = sdf.parse(startDateStr);
-			Employee e = new Employee(firstName, lastName, startDate, title);
-		
-			eService.save(e);
+			emp.setFirstName(firstName);
+			emp.setLastName(lastName);
+			emp.setTitle(title);
+			emp.setStartDate(startDate);
+			
+			
+			eService.save(emp);
 //			String contextPath = request.getContextPath();
 //			response.sendRedirect(contextPath);
+			
 			request.getServletContext().getRequestDispatcher("/listemp").forward(request, response);
 		
 		} catch (ParseException e) {
 			
 			e.printStackTrace();
 		}
-		
 	}
 
 }

@@ -14,33 +14,40 @@
 
 </head>
 <body>
+
+ <header>
+                <nav class="navbar navbar-expand-md navbar-dark" style="background-color: grey">
+
+                    <ul class="navbar-nav">
+                        <li><a href="listemp" class="nav-link">List Employees</a></li>
+                    </ul>
+                    <ul class="navbar-nav">
+                        <li><a href="logout" class="nav-link"> Se déconnecter</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <br>
+            
 	<div class="container">
 		
 		<form action="save" method="post">
 		
 			<div class="form-group">
-				<label for="first_name">First Name</label> 
-				<input type="text"	class="form-control" name="first_name" id="first_name" placeholder="Entrez votre prénom">
+				<label for="firstName">First Name</label> 
+				<input type="text"	class="form-control" name="firstName" placeholder="Entrez votre prénom">
 			</div>
 			<div class="form-group">
-				<label for="last_name">Last Name</label> 
-				<input type="text"	class="form-control" name="last_name" id="last_name" placeholder="Entrez votre nom">
+				<label for="lastName">Last Name</label> 
+				<input type="text"	class="form-control" name="lastName"  placeholder="Entrez votre nom">
+			</div>
+			
+			<div class="form-group">
+				<label for="startDate">Date de création</label> 
+				<input type="text" class="form-control" name="startDate"  placeholder="Entrez la date de création">
 			</div>
 			<div class="form-group">
-				<label for="email">Email</label> 
-				<input type="text" 	class="form-control" name="email" id="email"	placeholder="Entrez votre email">
-			</div>
-			<div class="form-group">
-				<label for="password">Password</label> 
-				<input type="text" class="form-control" name="password" id="password" placeholder="Entrez le mdp">
-			</div>
-			<div class="form-group">
-				<label for="dateCreation">Date de création</label> 
-				<input type="text" class="form-control" name="dateCreation" id="dateCreation" placeholder="Entrez la date de création">
-			</div>
-			<div class="form-group">
-				<label for="roleName">Role Name</label> 
-				<input type="text" class="form-control" name="roleName" id="roleName" placeholder="Entrez le role name">
+				<label for="title">Titre</label> 
+				<input type="text" class="form-control" name="title" placeholder="Entrez votre titre">
 			</div>
 			<button type="submit" class="btn btn-primary">Ajouter</button>
 		</form>
