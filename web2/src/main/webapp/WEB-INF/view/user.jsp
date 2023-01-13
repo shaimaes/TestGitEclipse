@@ -6,6 +6,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+	
 <title>Liste users</title>
 </head>
 <body>
@@ -14,16 +17,22 @@
 		<form action="userSave" method="post">
 		
 			<div class="form-group">
+				<label for="email">Email</label> 
+				<input type="text" 	class="form-control" name="email" id="email"	placeholder="Entrez votre email">
+			</div>
+			
+			<div class="form-group">
+				<label for="email">Password</label> 
+				<input type="text" 	class="form-control" name="password" id="password"	placeholder="Entrez votre email">
+			</div>
+			
+			<div class="form-group">
 				<label for="first_name">First Name</label> 
 				<input type="text"	class="form-control" name="first_name" id="first_name" placeholder="Entrez votre prénom">
 			</div>
 			<div class="form-group">
 				<label for="last_name">Last Name</label> 
 				<input type="text"	class="form-control" name="last_name" id="last_name" placeholder="Entrez votre nom">
-			</div>
-			<div class="form-group">
-				<label for="email">Email</label> 
-				<input type="text" 	class="form-control" name="email" id="email"	placeholder="Entrez votre email">
 			</div>
 			<div class="form-group">
 				<label for="dateCreation">Date de création</label> 

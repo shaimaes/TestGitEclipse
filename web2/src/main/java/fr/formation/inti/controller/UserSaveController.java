@@ -61,6 +61,7 @@ public class UserSaveController extends HttpServlet {
 		} else {
 			
 			String email = request.getParameter("email");
+			String password= request.getParameter("password");
 			String first_name = request.getParameter("first_name");
 			String last_name = request.getParameter("last_name");
 			String roleName = request.getParameter("RoleName");
@@ -74,7 +75,7 @@ public class UserSaveController extends HttpServlet {
 				User u = new User();
 			
 				uService.save(u);
-				request.getServletContext().getRequestDispatcher("/listUserCon").forward(request, response);
+				request.getServletContext().getRequestDispatcher("/affchUse").forward(request, response);
 			
 			} catch (ParseException e) {
 				

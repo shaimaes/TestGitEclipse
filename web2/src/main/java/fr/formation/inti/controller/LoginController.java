@@ -59,22 +59,27 @@ public class LoginController extends HttpServlet {
 			throws ServletException, IOException {
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
+		String roleName = request.getParameter("roleName");
 
 		User user = userService.findUserBy(email, password);
 
-		if (user != null) {
+		if (user != null && roleName.equals("Admin")) {
 			HttpSession session = request.getSession();
 
 			session.setAttribute("user", user);
-
+			session.setAttribute("roleName", roleName);
+			request.getServletContext().getRequestDispatcher("/listUserCon").forward(request, response);
+			
+		} else if (user != null && roleName.equals("User")){
+			HttpSession session = request.getSession();
+			session.setAttribute("user", user);
+			session.setAttribute("roleName", roleName);
 			request.getServletContext().getRequestDispatcher("/listemp").forward(request, response);
 			
-		} else {
-			
+		} else
 			request.getSession().setAttribute("erreurlogin", "Email ou mot de passe incorrect");
 			request.getServletContext().getRequestDispatcher("/WEB-INF/view/login.jsp").forward(request, response);
 		
 		}
-	}
-
+	
 }

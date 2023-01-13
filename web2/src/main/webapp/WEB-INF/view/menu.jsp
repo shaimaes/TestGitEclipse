@@ -51,7 +51,11 @@
                 <li class="nav-item">
                     <a class="nav-link" href="addUser">Ajouter des users</a>
                 </li>
-
+ <c:if test="${u.roleName == 'Admin'}">
+                <li class="nav-item">
+                    <a class="nav-link" href="listUserCon">Listes des users</a>
+                </li> 
+                </c:if>
                 
                 <li class="nav-item">
                 <a class="nav-link" href="logout">se déconnecter</a>

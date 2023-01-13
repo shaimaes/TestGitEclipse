@@ -11,41 +11,39 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import fr.formation.inti.entity.Employee;
-import fr.formation.inti.service.EmployeeService;
-import fr.formation.inti.service.EmployeeServiceImpl;
-
-
-
+import fr.formation.inti.entity.User;
+import fr.formation.inti.service.UserService;
+import fr.formation.inti.service.UserServiceImpl;
 
 /**
- * Servlet implementation class ListUserController
+ * Servlet implementation class AffchListUser
  */
-@WebServlet("/listUserCon")
-public class ListUserController extends HttpServlet {
+@WebServlet("/affchUser")
+public class AffchListUser extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    private EmployeeService eService;
+    private UserService uService;
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ListUserController() {
-       this.eService = new EmployeeServiceImpl();
+    public AffchListUser() {
+        this.uService = new UserServiceImpl();
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+
 		HttpSession session = request.getSession(false);
 		if (session == null) {
 			
 			response.sendRedirect(request.getContextPath());
 		} else {
 			
-			List<Employee> employees = eService.findAll();
-			request.setAttribute("employees", employees);
-			employees.forEach(System.out::println);
-		request.getServletContext().getRequestDispatcher("/WEB-INF/view/listemployeeAdmin.jsp").forward(request, response);
+			List<User> users = uService.findAll();
+			request.setAttribute("users", users);
+			users.forEach(System.out::println);
+		request.getServletContext().getRequestDispatcher("/WEB-INF/view/listuser.jsp").forward(request, response);
 
 		
 		}
@@ -55,7 +53,7 @@ public class ListUserController extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
+		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

@@ -1,8 +1,7 @@
-<%@ page language="java" contentType="text/html; UTF-8"
-    pageEncoding="UTF-8"%>
-      
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 
 <!DOCTYPE html>
@@ -33,7 +32,13 @@
                     </ul>
                     
                     <ul class="navbar-nav">
-                        <li><a href="logout" class="nav-link"> Se dÃ©connecter</a></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="affchUser">Listes des users</a>
+                </li>
+                </ul> 
+                    
+                    <ul class="navbar-nav">
+                        <li><a href="logout" class="nav-link"> Se déconnecter</a></li>
                     </ul>
                     
                     
@@ -44,7 +49,7 @@
      
                 <div class="container">
                
-        <h3 class="text-center">Liste des employÃ©es</h3>
+        <h3 class="text-center">Liste des employées</h3>
          <hr>
               <br>
               <div class="row d-flex justify-content-center">
@@ -58,7 +63,7 @@
 			        	<th>Id User</th>
 			        	<th>First name</th>
 			        	<th>Last name</th>
-			        	<th>Date de crÃ©ation</th>
+			        	<th>Date de création</th>
 			        	<th>Titre</th>
 			        	<th>Action</th>
 			        	
