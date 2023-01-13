@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import fr.formation.inti.entity.Employee;
 import fr.formation.inti.service.EmployeeService;
@@ -32,13 +33,19 @@ public class ListEmployeeController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		HttpSession session = request.getSession(false);
+		if (session == null) {
+			
+			response.sendRedirect(request.getContextPath());
+		} else {
+			
 		List<Employee> employees = eService.findAll();
 		request.setAttribute("employees", employees);
 		employees.forEach(System.out::println);
-		request.getServletContext().getRequestDispatcher("/listemployee.jsp").forward(request, response);
+		request.getServletContext().getRequestDispatcher("/WEB-INF/view/listemployee.jsp").forward(request, response);
 
 		
+		}
 	}
 
 	/**

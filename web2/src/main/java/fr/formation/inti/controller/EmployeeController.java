@@ -38,14 +38,18 @@ public class EmployeeController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		HttpSession session = request.getSession(false);
-		
-		if(session != null) {
-			session.invalidate();
-		}
-		response.sendRedirect(request.getContextPath());
+//		HttpSession session = request.getSession(false);
+//		
+//		if(session != null) {
+//			session.invalidate();
+//		}
+//		response.sendRedirect(request.getContextPath());
 // -----------------------------------------------------------------------		
-		
+		HttpSession session = request.getSession(false);
+		if (session == null) {
+			
+			response.sendRedirect(request.getContextPath());
+		} else {
 		String action = request.getParameter("action");
 		if("find".equals(action)) {
 			
@@ -58,12 +62,18 @@ public class EmployeeController extends HttpServlet {
 			
 		}
 			
-	}
-		
+		}
+	}	
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		HttpSession session = request.getSession(false);
+		if (session == null) {
+			
+			response.sendRedirect(request.getContextPath());
+		} else {
 		
 		String empId = request.getParameter("empId");
 		String firstName = request.getParameter("firstName");
@@ -79,8 +89,6 @@ public class EmployeeController extends HttpServlet {
 			Employee e = new Employee(firstName, lastName, startDate, title);
 		
 			eService.save(e);
-//			String contextPath = request.getContextPath();
-//			response.sendRedirect(contextPath);
 			request.getServletContext().getRequestDispatcher("/listemp").forward(request, response);
 		
 		} catch (ParseException e) {
@@ -89,5 +97,5 @@ public class EmployeeController extends HttpServlet {
 		}
 		
 	}
-
+	}
 }

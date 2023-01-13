@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import fr.formation.inti.entity.Employee;
 import fr.formation.inti.service.EmployeeService;
@@ -36,22 +37,36 @@ public class EditController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		HttpSession session = request.getSession(false);
+		if (session == null) {
+			
+			response.sendRedirect(request.getContextPath());
+		} else {
+
+		
 		String empId = request.getParameter("id");
 		Integer id = Integer.parseInt(empId);
 		
 		Employee employees = eService.findById(id);
 		
 		request.setAttribute("emp", employees);
-		request.getServletContext().getRequestDispatcher("/jslt/Edit.jsp").forward(request, response);
+		request.getServletContext().getRequestDispatcher("/WEB-INF/view/Edit.jsp").forward(request, response);
 		
 		
+		}
 	}
-
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+		HttpSession session = request.getSession(false);
+		if (session == null) {
+			
+			response.sendRedirect(request.getContextPath());
+		} else {
+
+		
 		String empId = request.getParameter("empId");
 		Integer id = Integer.parseInt(empId);
 		
@@ -84,5 +99,5 @@ public class EditController extends HttpServlet {
 			e.printStackTrace();
 		}
 	}
-
+	}
 }

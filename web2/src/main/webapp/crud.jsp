@@ -33,7 +33,7 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item">
-					${user.firstName } ${user.lastName}<a class="nav-link" href="login">se déconnecter</a>
+					${user.first_name } ${user.last_name}<a class="nav-link" href="login">se déconnecter</a>
 					</li>
 					
 				</ul>

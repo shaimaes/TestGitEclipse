@@ -34,8 +34,17 @@ public class MenuController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+//		HttpSession session = request.getSession(false);
+//		if (session == null) {
+//			
+//			response.sendRedirect(request.getContextPath());
+//		} else {
+//			request.getServletContext().getRequestDispatcher("/menu.html").forward(request, response);
+//		}
+//		
+
 	}
+	
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
@@ -44,11 +53,12 @@ public class MenuController extends HttpServlet {
 		HttpSession session = request.getSession(false);
 		
 		if(session != null) {
-			RequestDispatcher dispatcher = request.getServletContext().getRequestDispatcher("/menu.html");
+			RequestDispatcher dispatcher = request.getServletContext().getRequestDispatcher("/WEB-INF/view/menu.jsp");
 			dispatcher.forward(request, response);
 		}else {
-			RequestDispatcher dispatcher = request.getServletContext().getRequestDispatcher("/login.jsp"); 
+			RequestDispatcher dispatcher = request.getServletContext().getRequestDispatcher("/WEB-INF/view/login.jsp"); 
 			dispatcher.forward(request, response);
+			
 	}
 	}
 }
