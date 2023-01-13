@@ -68,7 +68,7 @@ public class LoginController extends HttpServlet {
 
 			session.setAttribute("user", user);
 			session.setAttribute("roleName", roleName);
-			request.getServletContext().getRequestDispatcher("/listUserCon").forward(request, response);
+			request.getServletContext().getRequestDispatcher("/listempAdmin").forward(request, response);
 			
 		} else if (user != null && roleName.equals("User")){
 			HttpSession session = request.getSession();

@@ -61,7 +61,7 @@
         	<th>Last name</th>
         	<th>Date de création</th>
         	<th>Role name</th>
-        	<th>Action</th>
+        	<th>Modification</th> 	
       
         	
         	</tr>
@@ -76,9 +76,9 @@
 		     <td>${u.last_name}</td>
 		     <td>${u.dateCreation}</td>
 		     <td>${u.roleName}</td>
-		     <td><a class="btn btn-primary" href="edit?id=<c:out value='${e.empId}' />">Edit</a> &nbsp;&nbsp;&nbsp;&nbsp; <a class="btn btn-danger " onclick="return confirm('Are you sure you want to delete this item?');" href="delete?id=<c:out value='${e.empId}' />">Delete</a>
-					    
-	  </td> 
+		    <td><a class="btn btn-primary" href="edit?id=<c:out value='${u.idUser}' />">Edit</a> &nbsp;&nbsp;&nbsp;&nbsp; <a class="btn btn-danger " onclick="return confirm('Are you sure you want to delete this item?');" href="delete?id=<c:out value='${u.idUser}' />">Delete</a>
+					     </td>  
+
     </tr>
  </c:forEach>
        

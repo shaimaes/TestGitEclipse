@@ -1,8 +1,6 @@
 package fr.formation.inti.controller;
 
 import java.io.IOException;
-import java.util.List;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,52 +8,52 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import fr.formation.inti.entity.Employee;
-import fr.formation.inti.service.EmployeeService;
-import fr.formation.inti.service.EmployeeServiceImpl;
 
-
+import fr.formation.inti.service.UserService;
+import fr.formation.inti.service.UserServiceImpl;
 
 
 /**
- * Servlet implementation class ListUserController
+ * Servlet implementation class DeleteController
  */
-@WebServlet("/listUserCon")
-public class ListUserController extends HttpServlet {
+@WebServlet("/Udelete")
+public class UserDeleteController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    private EmployeeService eService;
+	private UserService uService;   
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ListUserController() {
-       this.eService = new EmployeeServiceImpl();
+    public UserDeleteController() {
+    	this.uService = new UserServiceImpl();
+        
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 		HttpSession session = request.getSession(false);
 		if (session == null) {
 			
 			response.sendRedirect(request.getContextPath());
 		} else {
-			
-			List<Employee> employees = eService.findAll();
-			request.setAttribute("employees", employees);
-			employees.forEach(System.out::println);
-		request.getServletContext().getRequestDispatcher("/WEB-INF/view/listemployeeAdmin.jsp").forward(request, response);
-
+	
+		String idUser = request.getParameter("id");
+		Integer id = Integer.parseInt(idUser);
 		
-		}
+		uService.deleteById(id);
+		
+		request.getServletContext().getRequestDispatcher("/listempAdmin").forward(request, response);
+		} 
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
+		
+		//request.getServletContext().getRequestDispatcher("/listemp").forward(request, response);
+		
 		doGet(request, response);
 	}
 

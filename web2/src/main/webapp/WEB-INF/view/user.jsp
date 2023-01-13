@@ -23,7 +23,7 @@
 			
 			<div class="form-group">
 				<label for="email">Password</label> 
-				<input type="text" 	class="form-control" name="password" id="password"	placeholder="Entrez votre email">
+				<input type="text" 	class="form-control" name="password" id="password"	placeholder="Entrez votre mot de passe">
 			</div>
 			
 			<div class="form-group">

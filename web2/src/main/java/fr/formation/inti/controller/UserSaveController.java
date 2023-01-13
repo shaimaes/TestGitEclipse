@@ -44,6 +44,7 @@ public class UserSaveController extends HttpServlet {
 			
 			response.sendRedirect(request.getContextPath());
 		} else {
+			
 			List<User> users = uService.findAll();
 			users.forEach(System.out::println);
 		}
@@ -72,10 +73,10 @@ public class UserSaveController extends HttpServlet {
 			
 			try {
 				Date dateCreation = sdf.parse(dateCreationStr);
-				User u = new User();
+				User u = new User(email, password, dateCreation, first_name, last_name, roleName);
 			
 				uService.save(u);
-				request.getServletContext().getRequestDispatcher("/affchUse").forward(request, response);
+				request.getServletContext().getRequestDispatcher("/affchUser").forward(request, response);
 			
 			} catch (ParseException e) {
 				
