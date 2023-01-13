@@ -45,6 +45,8 @@ public class DeleteController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		//request.getServletContext().getRequestDispatcher("/listemp").forward(request, response);
+		
 		doGet(request, response);
 	}
 

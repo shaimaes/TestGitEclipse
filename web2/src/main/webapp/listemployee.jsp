@@ -29,9 +29,11 @@
                     <ul class="navbar-nav">
                         <li><a href="employee.jsp" class="nav-link">Add Employees</a></li>
                     </ul>
+                    
                     <ul class="navbar-nav">
                         <li><a href="logout" class="nav-link"> Se déconnecter</a></li>
                     </ul>
+                    
                 </nav>
             </header>
             <br>
@@ -39,22 +41,24 @@
      
                 <div class="container">
                
-        <h3 class="text-center">List of Employees</h3>
+        <h3 class="text-center">Liste des employées</h3>
          <hr>
               <br>
               <div class="row d-flex justify-content-center">
 			<div class="col">
               
-            <table class="table table-bordered table-striped  justify-content-center" >
+            <table class="table table-bordered table-striped  justify-content-center"  data-toggle="table" data-pagination="true"  data-search="true"
+            id="table" >
                 
 			        	<thead>
 			        	<tr>
-			        	<td>Id User</td>
-			        	<td>First name</td>
-			        	<td>Last name</td>
-			        	<td>Date de création</td>
-			        	<td>Titre</td>
-			        	<td>Action</td>
+			        	<th>Id User</th>
+			        	<th>First name</th>
+			        	<th>Last name</th>
+			        	<th>Date de création</th>
+			        	<th>Titre</th>
+			        	<th>Action</th>
+			        	
 			        	
 			        	</tr>
 			        	</thead>
@@ -66,10 +70,10 @@
 					     <td>${e.lastName}</td>
 					     <td>${e.startDate}</td>
 					     <td>${e.title}</td>
-					     <td><a href="edit?id=<c:out value='${e.empId}' />">Edit</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="delete?id=<c:out value='${e.empId}' />">Delete</a>
-					     <input type="hidden" name="empId"  value="${emp.empId }">
+					     <td><a class="btn btn-primary" href="edit?id=<c:out value='${e.empId}' />">Edit</a> &nbsp;&nbsp;&nbsp;&nbsp; <a class="btn btn-danger " onclick="return confirm('Are you sure you want to delete this item?');" href="delete?id=<c:out value='${e.empId}' />">Delete</a>
+					    
 					     </td> 
-			    	 </tr>
+					</tr>
 			     </c:forEach>
        
 			        </tbody>
@@ -77,7 +81,6 @@
                 </div>
                  </div>
              </div>
-           
             
         </body>
 

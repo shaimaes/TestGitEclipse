@@ -44,6 +44,7 @@ public class GenericDaoImpl<T,ID extends Serializable> implements GenericDao<T, 
 			session.getTransaction().commit();
 		else
 			session.getTransaction().rollback();
+			session.close();
 	}
 	
 	@Override
@@ -73,7 +74,7 @@ public class GenericDaoImpl<T,ID extends Serializable> implements GenericDao<T, 
 	public void deleteById(ID id) {
 		T t = session.get(type, id);
 		session.delete(t);
-		
+	
 	}
 	
 	public void close() {

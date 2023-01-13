@@ -47,7 +47,7 @@ public class MenuController extends HttpServlet {
 			RequestDispatcher dispatcher = request.getServletContext().getRequestDispatcher("/menu.html");
 			dispatcher.forward(request, response);
 		}else {
-			RequestDispatcher dispatcher = request.getServletContext().getRequestDispatcher("/login.html"); 
+			RequestDispatcher dispatcher = request.getServletContext().getRequestDispatcher("/login.jsp"); 
 			dispatcher.forward(request, response);
 	}
 	}

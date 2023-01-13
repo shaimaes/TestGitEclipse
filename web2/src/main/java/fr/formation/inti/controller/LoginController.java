@@ -43,6 +43,7 @@ public class LoginController extends HttpServlet {
 
 		HttpSession session = request.getSession(false);
 		if (session == null) {
+			
 			response.sendRedirect(request.getContextPath());
 		} else {
 			request.getServletContext().getRequestDispatcher("/menu.html").forward(request, response);
@@ -68,8 +69,9 @@ public class LoginController extends HttpServlet {
 
 			request.getServletContext().getRequestDispatcher("/listemp").forward(request, response);
 		} else
-			// request.setAttribute("error", "mail or password error !");
-			request.getServletContext().getRequestDispatcher("/login.html").forward(request, response);
+			//request.setAttribute("errorlogin", "mail or password error !");
+			request.getSession().setAttribute("erreurlogin", "Email ou mot de passe incorrect");
+			request.getServletContext().getRequestDispatcher("/login.jsp").forward(request, response);
 
 	}
 
