@@ -57,6 +57,7 @@ public class LoginController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
 		String roleName = request.getParameter("roleName");
@@ -68,13 +69,13 @@ public class LoginController extends HttpServlet {
 
 			session.setAttribute("user", user);
 			session.setAttribute("roleName", roleName);
-			request.getServletContext().getRequestDispatcher("/listempAdmin").forward(request, response);
+			request.getServletContext().getRequestDispatcher("/listemp").forward(request, response);
 			
 		} else if (user != null && roleName.equals("User")){
 			HttpSession session = request.getSession();
-			session.setAttribute("user", user);
+			session.setAttribute("user", user);							
 			session.setAttribute("roleName", roleName);
-			request.getServletContext().getRequestDispatcher("/listemp").forward(request, response);
+			request.getServletContext().getRequestDispatcher("/listempUser").forward(request, response);
 			
 		} else
 			request.getSession().setAttribute("erreurlogin", "Email ou mot de passe incorrect");

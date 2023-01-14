@@ -33,6 +33,10 @@
                     </ul>
                     
                     <ul class="navbar-nav">
+                        <li><a href="affchUser" class="nav-link">List user</a></li>
+                    </ul>
+                    
+                    <ul class="navbar-nav">
                         <li><a href="logout" class="nav-link"> Se déconnecter</a></li>
                     </ul>
                     

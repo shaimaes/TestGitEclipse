@@ -65,7 +65,7 @@ public class UserSaveController extends HttpServlet {
 			String password= request.getParameter("password");
 			String first_name = request.getParameter("first_name");
 			String last_name = request.getParameter("last_name");
-			String roleName = request.getParameter("RoleName");
+			String roleName = request.getParameter("roleName");
 			
 
 			String dateCreationStr = request.getParameter("dateCreation");

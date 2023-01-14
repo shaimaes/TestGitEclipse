@@ -26,16 +26,7 @@
 
             <header>
                 <nav class="navbar navbar-expand-md navbar-dark" style="background-color: grey">
-
-                    <ul class="navbar-nav">
-                        <li><a href="addemployee" class="nav-link">Add Employees</a></li>
-                    </ul>
-                    
-                    <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="affchUser">Listes des users</a>
-                </li>
-                </ul> 
+                
                     
                     <ul class="navbar-nav">
                         <li><a href="logout" class="nav-link"> Se déconnecter</a></li>
@@ -65,8 +56,7 @@
 			        	<th>Last name</th>
 			        	<th>Date de création</th>
 			        	<th>Titre</th>
-			        	<th>Action</th>
-			        	
+			        
 			        	
 			        	</tr>
 			        	</thead>
@@ -78,9 +68,7 @@
 					     <td>${e.lastName}</td>
 					     <td>${e.startDate}</td>
 					     <td>${e.title}</td>
-					     <td><a class="btn btn-primary" href="edit?id=<c:out value='${e.empId}' />">Edit</a> &nbsp;&nbsp;&nbsp;&nbsp; <a class="btn btn-danger " onclick="return confirm('Are you sure you want to delete this item?');" href="delete?id=<c:out value='${e.empId}' />">Delete</a>
-					    
-					     </td> 
+					
 					</tr>
 			     </c:forEach>
        

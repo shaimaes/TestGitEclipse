@@ -31,6 +31,10 @@
                     </ul>
                     
                     <ul class="navbar-nav">
+                        <li><a href="listemp" class="nav-link">List Employees</a></li>
+                    </ul>
+                    
+                    <ul class="navbar-nav">
                         <li><a href="logout" class="nav-link"> Se déconnecter</a></li>
                     </ul>
                     
@@ -61,7 +65,7 @@
         	<th>Last name</th>
         	<th>Date de création</th>
         	<th>Role name</th>
-        	<th>Modification</th> 	
+        	<!-- <th>Modification</th> 	 -->
       
         	
         	</tr>
@@ -76,9 +80,9 @@
 		     <td>${u.last_name}</td>
 		     <td>${u.dateCreation}</td>
 		     <td>${u.roleName}</td>
-		    <td><a class="btn btn-primary" href="edit?id=<c:out value='${u.idUser}' />">Edit</a> &nbsp;&nbsp;&nbsp;&nbsp; <a class="btn btn-danger " onclick="return confirm('Are you sure you want to delete this item?');" href="delete?id=<c:out value='${u.idUser}' />">Delete</a>
+		    <!--  <td><a class="btn btn-primary" href="edit?id=<c:out value='${u.idUser}' />">Edit</a> &nbsp;&nbsp;&nbsp;&nbsp; <a class="btn btn-danger " onclick="return confirm('Are you sure you want to delete this item?');" href="delete?id=<c:out value='${u.idUser}' />">Delete</a>
 					     </td>  
-
+-->
     </tr>
  </c:forEach>
        
