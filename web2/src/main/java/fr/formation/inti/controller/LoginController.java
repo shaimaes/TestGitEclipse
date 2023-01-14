@@ -36,17 +36,13 @@ public class LoginController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-//		List<User> users = userService.findAll();
-//		request.setAttribute("users", users);
-//		request.getServletContext().getRequestDispatcher("/menu.html").forward(request, response);
-//	return;	
 
 		HttpSession session = request.getSession(false);
 		if (session == null) {
 			
 			response.sendRedirect(request.getContextPath());
 		} else {
-			request.getServletContext().getRequestDispatcher("/WEB-INF/view/menu.jsp").forward(request, response);
+			request.getServletContext().getRequestDispatcher("/WEB-INF/view/login.jsp").forward(request, response);
 		}
 
 	}

@@ -29,11 +29,11 @@
                 <nav class="navbar navbar-expand-md navbar-dark" style="background-color: grey">
 
                     <ul class="navbar-nav">
-                        <li><a href="addemployee" class="nav-link">Add Employees</a></li>
+                        <li><a href="addemployee" class="nav-link">Ajouter des employées</a></li>
                     </ul>
                     
                     <ul class="navbar-nav">
-                        <li><a href="affchUser" class="nav-link">List user</a></li>
+                        <li><a href="affchUser" class="nav-link">Liste des utilisateurs</a></li>
                     </ul>
                     
                     <ul class="navbar-nav">
@@ -51,7 +51,7 @@
         <h3 class="text-center">Liste des employées</h3>
          <hr>
               <br>
-              <div class="row d-flex justify-content-center">
+              <div class="row d-flex justify-content-center text-center">
 			<div class="col">
               
             <table class="table table-bordered table-striped  justify-content-center"  data-toggle="table" data-pagination="true"  data-search="true"
@@ -59,7 +59,7 @@
                 
 			        	<thead>
 			        	<tr>
-			        	<th>Id User</th>
+			        	<th>Id</th>
 			        	<th>First name</th>
 			        	<th>Last name</th>
 			        	<th>Date de création</th>

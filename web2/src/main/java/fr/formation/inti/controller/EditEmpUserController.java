@@ -89,9 +89,6 @@ public class EditEmpUserController extends HttpServlet {
 			
 			
 			eService.save(emp);
-//			String contextPath = request.getContextPath();
-//			response.sendRedirect(contextPath);
-			
 			request.getServletContext().getRequestDispatcher("/listempUse").forward(request, response);
 		
 		} catch (ParseException e) {

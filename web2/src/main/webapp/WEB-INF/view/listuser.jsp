@@ -27,11 +27,11 @@
                 <nav class="navbar navbar-expand-md navbar-dark" style="background-color: grey">
 
                     <ul class="navbar-nav">
-                        <li><a href="addUser" class="nav-link">Add user</a></li>
+                        <li><a href="addUser" class="nav-link">Ajouter des utilisateurs</a></li>
                     </ul>
                     
                     <ul class="navbar-nav">
-                        <li><a href="listemp" class="nav-link">List Employees</a></li>
+                        <li><a href="listemp" class="nav-link">Liste des employées</a></li>
                     </ul>
                     
                     <ul class="navbar-nav">
@@ -58,7 +58,7 @@
             
         	<thead>
         	<tr>
-        	<th>Id User</th>
+        	<th>Id</th>
         	<th>Email</th>
         	<th>Password</th>
         	<th>First name</th>

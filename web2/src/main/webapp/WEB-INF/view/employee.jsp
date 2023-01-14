@@ -15,20 +15,48 @@
 </head>
 <body>
 
- <header>
-                <nav class="navbar navbar-expand-md navbar-dark" style="background-color: grey">
+   <!--  <header>
+        <nav class="navbar navbar-expand-md navbar-dark" style="background-color: grey">
 
-                    <ul class="navbar-nav">
-                        <li><a href="listemp" class="nav-link">List Employees</a></li>
-                    </ul>
-                    <ul class="navbar-nav">
-                        <li><a href="logout" class="nav-link"> Se déconnecter</a></li>
-                    </ul>
-                </nav>
-            </header>
-            <br>
-            
-	<div class="container">
+            <ul class="navbar-nav">
+                <li><a href="listemp" class="nav-link">List Employees</a></li>
+            </ul>
+            <ul class="navbar-nav">
+                <li><a href="logout" class="nav-link"> Se déconnecter</a></li>
+            </ul>
+        </nav>
+    </header> -->
+    
+    <header class="navbar navbar-expand-md navbar-dark bg-light">
+
+        <!-- barre de navigation -->
+
+        <div class="container-fluid justify-content-center justify-content-md-between">
+            <div class="d-flex my-2 my-sm-0">
+                <a class="navbar-brand me-2 mb-1 d-flex justify-content-center ">
+                    <img src="logo-site.png" height="40" alt="logo" loading="lazy">
+                </a>
+            </div>
+            <ul class="navbar-nav flex-row ">
+                <li class="nav-item me-3 me-lg-0">
+                    <a class="nav-link text-center text-dark" href="listemp">
+                        <span class="">Liste des Employées</span>
+                    </a>
+            </ul>
+            <ul class="navbar-nav flex-row">
+                <li class="nav-item me-3 me-lg-0">
+                    <a class="nav-link text-dark" href="logout">
+                        <span class="d-grid gap-2 d-lg-inline-block">Se déconnecter</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+           
+        <!-- Formulaire -->
+        
+	 <div class="container pt-3 ">
+        <div class="card-body">
 		
 		<form action="save" method="post">
 		
@@ -52,7 +80,7 @@
 			<button type="submit" class="btn btn-primary">Ajouter</button>
 		</form>
 
-
+</div>
 	</div>
 </body>
 </html>

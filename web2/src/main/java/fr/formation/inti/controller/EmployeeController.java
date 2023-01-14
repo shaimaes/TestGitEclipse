@@ -38,32 +38,18 @@ public class EmployeeController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-//		HttpSession session = request.getSession(false);
-//		
-//		if(session != null) {
-//			session.invalidate();
-//		}
-//		response.sendRedirect(request.getContextPath());
-// -----------------------------------------------------------------------		
 		HttpSession session = request.getSession(false);
 		if (session == null) {
 			
 			response.sendRedirect(request.getContextPath());
 		} else {
-		String action = request.getParameter("action");
-		if("find".equals(action)) {
-			
-			Integer id = Integer.parseInt(request.getParameter("id"));
-			Employee cust = eService.findById(id);
-			System.out.println(cust);
-		}else {
 			List<Employee> employees = eService.findAll();
 			employees.forEach(System.out::println);
 			
 		}
 			
 		}
-	}	
+
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
