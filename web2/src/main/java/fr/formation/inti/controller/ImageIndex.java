@@ -33,7 +33,7 @@ public class ImageIndex extends HttpServlet {
 			response.sendRedirect(request.getContextPath());
 		} else {
 		
-		getServletContext().getRequestDispatcher("/img/imageIndex.PNG").forward(request, response);
+		getServletContext().getRequestDispatcher("/img/indexImage.JPG").forward(request, response);
 	}
 	}
 	/**
