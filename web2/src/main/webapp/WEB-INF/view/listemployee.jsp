@@ -43,7 +43,32 @@
                     
                 </nav>
             </header> 
-            <br>
+            
+			 <header class="navbar navbar-expand-md navbar-dark bg-light">
+			
+			        <!-- barre de navigation -->
+			
+			        <div class="container-fluid justify-content-center justify-content-md-between">
+			            <div class="d-flex my-2 my-sm-0">
+			                <ul class="navbar-nav">
+                        <li><a href="addemployee" class="nav-link text-dark">Ajouter des employées</a></li>
+                   		 </ul>
+			            </div>
+			            
+			            
+	                    <ul class="navbar-nav">
+	                        <li><a href="affchUser" class="nav-link text-dark">Liste des utilisateurs</a></li>
+	                    </ul>
+			            
+			            <ul class="navbar-nav flex-row">
+			                <li class="nav-item me-3 me-lg-0">
+			                    <a class="nav-link text-dark" href="logout">
+			                        <span class="d-grid gap-2 d-lg-inline-block">Se déconnecter</span>
+			                    </a>
+			                </li>
+			            </ul>
+			        </div>
+			    </header>
 
      
                 <div class="container">

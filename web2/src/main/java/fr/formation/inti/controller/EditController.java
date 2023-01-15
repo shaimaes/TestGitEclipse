@@ -63,7 +63,7 @@ public class EditController extends HttpServlet {
 		HttpSession session = request.getSession(false);
 		if (session == null) {
 			
-			response.sendRedirect(request.getContextPath());
+			request.getServletContext().getRequestDispatcher("/index.html").forward(request, response);
 		} else {
 
 		

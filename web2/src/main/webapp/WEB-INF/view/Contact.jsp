@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Nous contacter</title>
 </head>
 <body>
 <header class="navbar navbar-expand-md navbar-dark bg-light">
@@ -19,7 +19,20 @@
     </header>
 
 <!-- Formulaire de contact -->
-
+<div class="container mt-3 ">
+        <div class="card">
+        <div class="card-body">
+	<h1> Nous contacter </h1>
+	
+	<form action="https://formsubmit.co/your@email.com" method="POST">
+		<input type="text" name="name" placeholder="Nom" required>
+		<input type="text" name="email" placeholder="Email" required>
+		<textarea name="Message" placeholder="Message"></textarea>
+		<button type="submit">Envoyer</button>
+	</form>
+</div>
+</div>
+</div>
 
 </body>
 </html>

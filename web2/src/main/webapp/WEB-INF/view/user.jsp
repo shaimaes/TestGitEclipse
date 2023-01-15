@@ -54,41 +54,47 @@
 
 
 <!-- Formulaire -->
-	 <div class="container ">
+	 <div class="container mt-3 ">
+        <div class="card">
         <div class="card-body">
 		<form action="userSave" method="post">
 		
 			<div class="form-group">
 				<label for="email">Email</label> 
-				<input type="text" 	class="form-control" name="email" id="email"	placeholder="Entrez votre email">
+				<input type="text" 	class="form-control" name="email" id="email"	placeholder="Entrez votre email" required>
 			</div>
 			
 			<div class="form-group">
 				<label for="email">Password</label> 
-				<input type="text" 	class="form-control" name="password" id="password"	placeholder="Entrez votre mot de passe">
+				<input type="text" 	class="form-control" name="password" id="password"	placeholder="Entrez votre mot de passe" required>
 			</div>
 			
 			<div class="form-group">
 				<label for="first_name">First Name</label> 
-				<input type="text"	class="form-control" name="first_name" id="first_name" placeholder="Entrez votre prénom">
+				<input type="text"	class="form-control" name="first_name" id="first_name" placeholder="Entrez votre prénom" required>
 			</div>
+			
 			<div class="form-group">
 				<label for="last_name">Last Name</label> 
-				<input type="text"	class="form-control" name="last_name" id="last_name" placeholder="Entrez votre nom">
+				<input type="text"	class="form-control" name="last_name" id="last_name" placeholder="Entrez votre nom" required>
 			</div>
+			
 			<div class="form-group">
-				<label for="dateCreation">Date de création</label> 
-				<input type="text" class="form-control" name="dateCreation" id="dateCreation" placeholder="Entrez la date de création">
+				<label for="dateCreation">Date de création (yyyy-mm-dd)</label> 
+				<input type="text" class="form-control" name="dateCreation" id="dateCreation" placeholder="Entrez la date de création" required>
 			</div>
+			
 			<div class="form-group">
-				<label for="roleName">Role Name</label> 
-				<input type="text" class="form-control" name="roleName" id="roleName" placeholder="Entrez le role name">
-			</div>
+                        <label for="roleName">Role Name</label>
+                        <select class="form-control" name="roleName" id="roleName" required>
+                            <option>Admin</option>
+                            <option>User</option>
+                        </select>
+                    </div>
 			<button type="submit" class="btn btn-primary">Ajouter</button>
 		</form>
 </div>
-
-
+</div>
 	</div>
 </body>
 </html>

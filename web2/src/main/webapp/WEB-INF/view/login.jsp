@@ -56,7 +56,7 @@
                     <div class="card">
                         <div class="card-body">
 
-                            <div class="row">
+                            <div class="row text-center">
                                 <div class="col">
                                     <figure>
                                         <img src="img/signup-image.jpg" alt="sing up image">
@@ -75,14 +75,13 @@
 
                                  <div class="row text-center">
                                     <div class="col text-center">
-                                        <div class="form-group">
-                                            <label for="utilisateur"
-                                                class="col">Utilisateur
-                                                (ad/user)</label>
-                                            <div class="col">
-                                                <input type="text" id="roleName" class="form-control" name="roleName"
-                                                    required>
-                                            </div>
+                                       <div class="form-group">
+					                        <label for="roleName">Role Name</label>
+					                        <select class="form-control" name="roleName" id="roleName" required>
+					                        	<option>User</option>
+					                            <option>Admin</option>
+					                        </select>
+					                    </div>               
                                         </div>
                                     </div>
                                 </div>
@@ -124,6 +123,7 @@
                                             <button type="submit" class="btn btn-primary text-center">
                                                 Se connecter</button>
                                         </div>
+                                        <br></br>
                                         <c:if
                                             test="${not empty sessionScope.erreurlogin && sessionScope.erreurlogin == 'Email ou mot de passe incorrect'}">
                                             <span style="color: red;">

@@ -41,7 +41,8 @@ public class EmployeeController extends HttpServlet {
 		HttpSession session = request.getSession(false);
 		if (session == null) {
 			
-			response.sendRedirect(request.getContextPath());
+			//response.sendRedirect(request.getContextPath());
+			request.getServletContext().getRequestDispatcher("/index.html").forward(request, response);
 		} else {
 			List<Employee> employees = eService.findAll();
 			employees.forEach(System.out::println);
