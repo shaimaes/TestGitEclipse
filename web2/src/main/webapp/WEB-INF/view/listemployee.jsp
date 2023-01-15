@@ -37,6 +37,10 @@
                     </ul>
                     
                     <ul class="navbar-nav">
+                        <li><a href="contact" class="nav-link">Nous contacter</a></li>
+                    </ul>
+                    
+                    <ul class="navbar-nav">
                         <li><a href="logout" class="nav-link"> Se déconnecter</a></li>
                     </ul>
                     

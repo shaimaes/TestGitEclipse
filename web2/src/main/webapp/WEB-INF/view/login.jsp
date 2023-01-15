@@ -123,13 +123,14 @@
                                             <button type="submit" class="btn btn-primary text-center">
                                                 Se connecter</button>
                                         </div>
-                                        <br></br>
+                                        
                                         <c:if
                                             test="${not empty sessionScope.erreurlogin && sessionScope.erreurlogin == 'Email ou mot de passe incorrect'}">
                                             <span style="color: red;">
                                                 <c:out value="${sessionScope.erreurlogin}" />
                                             </span>
                                         </c:if>
+                                        <br></br>
                                     </div>
                                 </div>
                                
