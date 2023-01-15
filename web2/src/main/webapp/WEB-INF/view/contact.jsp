@@ -20,32 +20,61 @@
 <title>Nous contacter</title>
 </head>
 <body>
-<header class="navbar navbar-expand-md navbar-dark bg-light">
- <ul class="navbar-nav flex-row">
-                <li class="nav-item me-3 me-lg-0">
-                    <a class="nav-link text-dark" href="logout">
-                        <span class="d-grid gap-2 d-lg-inline-block">Se déconnecter</span>
-                    </a>
-                </li>
-            </ul>
-        
-    </header>
 
-<!-- Formulaire de contact -->
-<div class="container ">
+ <header class="navbar navbar-expand-md navbar-dark bg-light">
+			
+			        <!-- barre de navigation -->
+			
+			        <div class="container-fluid justify-content-center justify-content-md-between">
+			            <div class="d-flex my-2 my-sm-0">
+			                <ul class="navbar-nav">
+	                        <li><a href="listemp" class="nav-link text-dark">Liste des employées</a></li>
+	                    </ul>
+	                    
+	                    <ul class="navbar-nav">
+	                        <li><a href="affchUser" class="nav-link text-dark">Liste des utilisateurs</a></li>
+	                    </ul>
+	                    
+			            </div>
+
+			            <ul class="navbar-nav flex-row">
+			                <li class="nav-item me-3 me-lg-0">
+			                    <a class="nav-link text-dark" href="logout">
+			                        <span class="d-grid gap-2 d-lg-inline-block">Se déconnecter</span>
+			                    </a>
+			                </li>
+			            </ul>
+			        </div>
+			    </header>
+
+
+<!-- Formulaire -->
+	 <div class="container mt-3 ">
         <div class="card">
         <div class="card-body">
-	<h1> Nous contacter </h1>
-	
-	<form action="https://formsubmit.co/your@email.com" method="POST">
-		<input type="text" name="name" placeholder="Nom" required>
-		<input type="text" name="email" placeholder="Email" required>
-		<textarea name="Message" placeholder="Message"></textarea>
-		<button type="submit">Envoyer</button>
-	</form>
+        <h3> Nous contacter </h3>
+		<form action="contact" method="post">
+		
+			<div class="form-group">
+				<label for="email">Nom</label> 
+				<input type="text" 	class="form-control" name="nom" id="nom"	placeholder="Entrez votre nom" required>
+			</div>
+			
+			<div class="form-group">
+				<label for="email">Email</label> 
+				<input type="text" 	class="form-control" name="Email" id="Email"	placeholder="Entrez votre email" required>
+			</div>
+			
+			<div class="form-group">
+			<label for="email">Descritpion</label>
+				<br></br>
+				<textarea name="Message" placeholder="Message" rows="7" cols="100" required> Votre message ...</textarea> 
+			</div>
+			<button type="submit" class="btn btn-primary">Envoyer</button>
+			<br></br>
+		</form>
 </div>
 </div>
-</div>
-
+	</div>
 </body>
 </html>

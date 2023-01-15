@@ -23,28 +23,32 @@
 </head>
 <body>
 
-<header>
-                <nav class="navbar navbar-expand-md navbar-dark" style="background-color: grey">
+ <header class="navbar navbar-expand-md navbar-dark bg-light">
+			
+			        <!-- barre de navigation -->
+			
+			        <div class="container-fluid justify-content-center justify-content-md-between">
+			            <div class="d-flex my-2 my-sm-0">
+			                <ul class="navbar-nav">
+                        <li><a href="addUser" class="nav-link text-dark">Ajouter des utilisateurs</a></li>
+                    </ul>
+	                    
+	                     <ul class="navbar-nav">
+                        <li><a href="listemp" class="nav-link text-dark">Liste des employées</a></li>
+                    </ul>
+	                    
+			            </div>
 
-                    <ul class="navbar-nav">
-                        <li><a href="addUser" class="nav-link">Ajouter des utilisateurs</a></li>
-                    </ul>
-                    
-                    <ul class="navbar-nav">
-                        <li><a href="listemp" class="nav-link">Liste des employées</a></li>
-                    </ul>
-                    
-                    <ul class="navbar-nav">
-                        <li><a href="logout" class="nav-link"> Se déconnecter</a></li>
-                    </ul>
-                    
-                
-  
-                </nav>
-            </header> 
-            <br>
-
-     
+			            <ul class="navbar-nav flex-row">
+			                <li class="nav-item me-3 me-lg-0">
+			                    <a class="nav-link text-dark" href="logout">
+			                        <span class="d-grid gap-2 d-lg-inline-block">Se déconnecter</span>
+			                    </a>
+			                </li>
+			            </ul>
+			        </div>
+			    </header>
+     <br>
 
   <div class="container">
 <h3 class="text-center">Liste des users</h3>

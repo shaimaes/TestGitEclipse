@@ -30,7 +30,7 @@ public class AddEmployeeController extends HttpServlet {
 		if (session == null) {
 			
 			//response.sendRedirect(request.getContextPath());
-			request.getServletContext().getRequestDispatcher("/index.html").forward(request, response);
+			request.getServletContext().getRequestDispatcher("/conx").forward(request, response);
 		} else {
 		
 		getServletContext().getRequestDispatcher("/WEB-INF/view/employee.jsp").forward(request, response);

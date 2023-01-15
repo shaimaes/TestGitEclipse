@@ -37,7 +37,7 @@ public class AffchListUser extends HttpServlet {
 		HttpSession session = request.getSession(false);
 		if (session == null) {
 			
-			request.getServletContext().getRequestDispatcher("/index.html").forward(request, response);
+			request.getServletContext().getRequestDispatcher("/conx").forward(request, response);
 		} else {
 			
 			List<User> users = uService.findAll();
