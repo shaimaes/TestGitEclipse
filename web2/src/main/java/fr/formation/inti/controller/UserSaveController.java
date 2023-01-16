@@ -36,6 +36,7 @@ public class UserSaveController extends HttpServlet {
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * Affiche le résultat, la réponse
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
@@ -52,6 +53,9 @@ public class UserSaveController extends HttpServlet {
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * 
+	 * La méthode doPost() recueille les paramètres pour les traiter et générer une réponse. 
+	 * Pour obtenir la valeur associée à chaque paramètre il faut utiliser la méthode getParameter() 
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -60,7 +64,7 @@ public class UserSaveController extends HttpServlet {
 			
 			request.getServletContext().getRequestDispatcher("/conx").forward(request, response);
 		} else {
-			
+			// Récupère la valeur des différents paramètres
 			String email = request.getParameter("email");
 			String password= request.getParameter("password");
 			String first_name = request.getParameter("first_name");
@@ -73,6 +77,8 @@ public class UserSaveController extends HttpServlet {
 			
 			try {
 				Date dateCreation = sdf.parse(dateCreationStr);
+				
+				//constructeur 
 				User u = new User(email, password, dateCreation, first_name, last_name, roleName);
 			
 				uService.save(u);

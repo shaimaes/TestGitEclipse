@@ -34,7 +34,7 @@
                     </ul>
 	                    
 	                     <ul class="navbar-nav">
-                        <li><a href="listemp" class="nav-link text-dark">Liste des employées</a></li>
+                        <li><a href="listemp" class="nav-link text-dark">Menu</a></li>
                     </ul>
 	                    
 			            </div>

@@ -95,7 +95,7 @@
                                                 class="col">E-MailAddress</label>
                                             <div class="col">
                                                 <input type="email" id="email_address" class="form-control" name="email"
-                                                    required autofocus>
+                                                    required>
                                             </div>
                                         </div>
                                     </div>
@@ -125,9 +125,9 @@
                                         </div>
                                         
                                         <c:if
-                                            test="${not empty sessionScope.erreurlogin && sessionScope.erreurlogin == 'Email ou mot de passe incorrect'}">
+                                            test="${not empty erreurlogin && erreurlogin eq 'Email ou mot de passe incorrect'}">
                                             <span style="color: red;">
-                                                <c:out value="${sessionScope.erreurlogin}" />
+                                                <c:out value="${erreurlogin}" />
                                             </span>
                                         </c:if>
                                         <br></br>

@@ -72,8 +72,9 @@
 			        	<th>Last name</th>
 			        	<th>Date de création</th>
 			        	<th>Titre</th>
+			        	<c:if test="${user.roleName eq 'Admin' }">
 			        	<th>Action</th>
-			        	
+			        	</c:if>
 			        	
 			        	</tr>
 			        	</thead>
@@ -85,9 +86,11 @@
 					     <td>${e.lastName}</td>
 					     <td>${e.startDate}</td>
 					     <td>${e.title}</td>
+					     <c:if test="${user.roleName eq 'Admin' }">
 					     <td><a class="btn btn-primary" href="edit?id=<c:out value='${e.empId}' />">Edit</a> &nbsp;&nbsp;&nbsp;&nbsp; <a class="btn btn-danger " onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet élément ?');" href="delete?id=<c:out value='${e.empId}' />">Delete</a>
-					    
+					   
 					     </td> 
+					     </c:if>
 					</tr>
 			     </c:forEach>
        

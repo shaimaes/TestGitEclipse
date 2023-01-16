@@ -39,7 +39,7 @@ public class LoginController extends HttpServlet {
 
 		HttpSession session = request.getSession(false);
 		if (session == null) {
-			
+
 			request.getServletContext().getRequestDispatcher("/index.html").forward(request, response);
 		} else {
 			request.getServletContext().getRequestDispatcher("/WEB-INF/view/login.jsp").forward(request, response);
@@ -53,30 +53,26 @@ public class LoginController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
+
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
 		String roleName = request.getParameter("roleName");
 
 		User user = userService.findUserBy(email, password);
 
-		if (user != null && roleName.equals("Admin")) {
+		if (user != null) {
 			HttpSession session = request.getSession();
 
+			session.setMaxInactiveInterval(1800);
 			session.setAttribute("user", user);
 			session.setAttribute("roleName", roleName);
 			request.getServletContext().getRequestDispatcher("/listemp").forward(request, response);
-			
-		} else if (user != null && roleName.equals("User")){
-			HttpSession session = request.getSession();
-			session.setAttribute("user", user);							
-			session.setAttribute("roleName", roleName);
-			request.getServletContext().getRequestDispatcher("/listempUser").forward(request, response);
-			
-		} else
-			request.getSession().setAttribute("erreurlogin", "Email ou mot de passe incorrect");
+
+		} else {
+			request.setAttribute("erreurlogin", "Email ou mot de passe incorrect");
 			request.getServletContext().getRequestDispatcher("/WEB-INF/view/login.jsp").forward(request, response);
-		
 		}
-	
+
+	}
+
 }
