@@ -34,7 +34,7 @@ public class DeleteController extends HttpServlet {
 		HttpSession session = request.getSession(false);
 		if (session == null) {
 			
-			request.getServletContext().getRequestDispatcher("/index.html").forward(request, response);
+			request.getServletContext().getRequestDispatcher("/conx").forward(request, response);
 		} else {
 	
 		String empId = request.getParameter("id");
@@ -50,9 +50,7 @@ public class DeleteController extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		//request.getServletContext().getRequestDispatcher("/listemp").forward(request, response);
-		
+
 		doGet(request, response);
 	}
 

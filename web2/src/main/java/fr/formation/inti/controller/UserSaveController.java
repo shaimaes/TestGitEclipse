@@ -42,7 +42,7 @@ public class UserSaveController extends HttpServlet {
 		HttpSession session = request.getSession(false);
 		if (session == null) {
 			
-			request.getServletContext().getRequestDispatcher("/index.html").forward(request, response);
+			request.getServletContext().getRequestDispatcher("/conx").forward(request, response);
 		} else {
 			
 			List<User> users = uService.findAll();
@@ -58,7 +58,7 @@ public class UserSaveController extends HttpServlet {
 		HttpSession session = request.getSession(false);
 		if (session == null) {
 			
-			request.getServletContext().getRequestDispatcher("/index.html").forward(request, response);
+			request.getServletContext().getRequestDispatcher("/conx").forward(request, response);
 		} else {
 			
 			String email = request.getParameter("email");

@@ -29,7 +29,6 @@ public class AddEmployeeController extends HttpServlet {
 		HttpSession session = request.getSession(false);
 		if (session == null) {
 			
-			//response.sendRedirect(request.getContextPath());
 			request.getServletContext().getRequestDispatcher("/conx").forward(request, response);
 		} else {
 		

@@ -35,7 +35,7 @@ public class UserDeleteController extends HttpServlet {
 		HttpSession session = request.getSession(false);
 		if (session == null) {
 			
-			request.getServletContext().getRequestDispatcher("/index.html").forward(request, response);
+			request.getServletContext().getRequestDispatcher("/conx").forward(request, response);
 		} else {
 	
 		String idUser = request.getParameter("id");
@@ -52,7 +52,7 @@ public class UserDeleteController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		//request.getServletContext().getRequestDispatcher("/listemp").forward(request, response);
+		
 		
 		doGet(request, response);
 	}

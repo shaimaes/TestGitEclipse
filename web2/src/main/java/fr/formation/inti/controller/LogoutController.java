@@ -39,7 +39,7 @@ public class LogoutController extends HttpServlet {
 			if(session != null) {
 				session.invalidate();
 			}
-			request.getServletContext().getRequestDispatcher("/index.html").forward(request, response);
+			request.getServletContext().getRequestDispatcher("/conx").forward(request, response);
 	}
 
 	/**
@@ -52,9 +52,7 @@ public class LogoutController extends HttpServlet {
 			session.invalidate();
 		}
 		
-		// put this logic anywhere in your application whenever needed to show Login.jsp 
-				//request.getRequestDispatcher("/WEB-INF/view/login.jsp").forward(request, response);
-		request.getServletContext().getRequestDispatcher("/index.html").forward(request, response);
+		request.getServletContext().getRequestDispatcher("/conx").forward(request, response);
 		
 	}
 

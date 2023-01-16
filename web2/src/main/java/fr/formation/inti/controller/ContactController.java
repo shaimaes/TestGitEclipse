@@ -29,8 +29,7 @@ public class ContactController extends HttpServlet {
 		HttpSession session = request.getSession(false);
 		if (session == null) {
 			
-			//response.sendRedirect(request.getContextPath());
-			request.getServletContext().getRequestDispatcher("/index.html").forward(request, response);
+			request.getServletContext().getRequestDispatcher("/conx").forward(request, response);
 		} else {
 		
 		getServletContext().getRequestDispatcher("/WEB-INF/view/contact.jsp").forward(request, response);
@@ -41,7 +40,7 @@ public class ContactController extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
 		doGet(request, response);
 	}
 

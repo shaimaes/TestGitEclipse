@@ -40,7 +40,7 @@ public class EditEmpUserController extends HttpServlet {
 		HttpSession session = request.getSession(false);
 		if (session == null) {
 			
-			request.getServletContext().getRequestDispatcher("/index.html").forward(request, response);
+			request.getServletContext().getRequestDispatcher("/conx").forward(request, response);
 		} else {
 
 		
@@ -50,7 +50,7 @@ public class EditEmpUserController extends HttpServlet {
 		Employee employees = eService.findById(id);
 		
 		request.setAttribute("emp", employees);
-		request.getServletContext().getRequestDispatcher("/WEB-INF/view/Edit.jsp").forward(request, response);
+		request.getServletContext().getRequestDispatcher("/WEB-INF/view/Edit2.jsp").forward(request, response);
 		
 		
 		}
