@@ -37,11 +37,11 @@ public class EditController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		HttpSession session = request.getSession(false);
-		if (session == null) {
-			
-			request.getServletContext().getRequestDispatcher("/conx").forward(request, response);
-		} else {
+//		HttpSession session = request.getSession(false);
+//		if (session == null) {
+//			
+//			request.getServletContext().getRequestDispatcher("/conx").forward(request, response);
+//		} else {
 
 		
 		String empId = request.getParameter("id");
@@ -53,18 +53,18 @@ public class EditController extends HttpServlet {
 		request.getServletContext().getRequestDispatcher("/WEB-INF/view/Edit.jsp").forward(request, response);
 		
 		
-		}
+//		}
 	}
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		HttpSession session = request.getSession(false);
-		if (session == null) {
-			
-			request.getServletContext().getRequestDispatcher("/conx").forward(request, response);
-		} else {
+//		HttpSession session = request.getSession(false);
+//		if (session == null) {
+//			
+//			request.getServletContext().getRequestDispatcher("/conx").forward(request, response);
+//		} else {
 
 		
 		String empId = request.getParameter("empId");
@@ -95,6 +95,6 @@ public class EditController extends HttpServlet {
 			
 			e.printStackTrace();
 		}
-	}
+//	}
 	}
 }

@@ -38,28 +38,28 @@ public class EmployeeController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		HttpSession session = request.getSession(false);
-		if (session == null) {
-			
-			request.getServletContext().getRequestDispatcher("/conx").forward(request, response);
-		} else {
+//		HttpSession session = request.getSession(false);
+//		if (session == null) {
+//			
+//			request.getServletContext().getRequestDispatcher("/conx").forward(request, response);
+//		} else {
 			List<Employee> employees = eService.findAll();
 			employees.forEach(System.out::println);
 			
 		}
 			
-		}
+//		}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		HttpSession session = request.getSession(false);
-		if (session == null) {
-			
-			request.getServletContext().getRequestDispatcher("/conx").forward(request, response);
-		} else {
+//		HttpSession session = request.getSession(false);
+//		if (session == null) {
+//			
+//			request.getServletContext().getRequestDispatcher("/conx").forward(request, response);
+//		} else {
 		
 		String empId = request.getParameter("empId");
 		String firstName = request.getParameter("firstName");
@@ -84,4 +84,4 @@ public class EmployeeController extends HttpServlet {
 		
 	}
 	}
-}
+//}

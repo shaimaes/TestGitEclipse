@@ -34,12 +34,12 @@ public class AffchListUser extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		HttpSession session = request.getSession(false);
-		if (session == null) {
-			
-			request.getServletContext().getRequestDispatcher("/conx").forward(request, response);
-		} else {
-			
+//		HttpSession session = request.getSession(false);
+//		if (session == null) {
+//			
+//			request.getServletContext().getRequestDispatcher("/conx").forward(request, response);
+//		} else {
+//			
 			List<User> users = uService.findAll();
 			request.setAttribute("users", users);
 			users.forEach(System.out::println);
@@ -47,7 +47,7 @@ public class AffchListUser extends HttpServlet {
 
 		
 		}
-	}
+//	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

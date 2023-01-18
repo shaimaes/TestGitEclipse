@@ -31,7 +31,7 @@
 
 			            <ul class="navbar-nav flex-row">
 			                <li class="nav-item me-3 me-lg-0">
-			                    <a class="nav-link text-dark" href="logout">
+			                    <a class="nav-link text-dark" href="loggedout">
 			                        <span class="d-grid gap-2 d-lg-inline-block">Se déconnecter</span>
 			                    </a>
 			                </li>

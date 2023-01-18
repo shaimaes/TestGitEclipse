@@ -26,15 +26,15 @@ public class AddEmployeeController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession session = request.getSession(false);
-		if (session == null) {
-			
-			request.getServletContext().getRequestDispatcher("/conx").forward(request, response);
-		} else {
-		
+//		HttpSession session = request.getSession(false);
+//		if (session == null) {
+//			
+//			request.getServletContext().getRequestDispatcher("/conx").forward(request, response);
+//		} else {
+//		
 		getServletContext().getRequestDispatcher("/WEB-INF/view/employee.jsp").forward(request, response);
 	}
-	}
+//	}
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */

@@ -33,11 +33,11 @@ public class ListEmployeeController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession session = request.getSession(false);
-		if (session == null) {
-			
-			request.getServletContext().getRequestDispatcher("/index.html").forward(request, response);
-		} else {
+//		HttpSession session = request.getSession(false);
+//		if (session == null) {
+//			
+//			request.getServletContext().getRequestDispatcher("/index.html").forward(request, response);
+//		} else {
 			
 		List<Employee> employees = eService.findAll();
 		request.setAttribute("employees", employees);
@@ -45,7 +45,7 @@ public class ListEmployeeController extends HttpServlet {
 		request.getServletContext().getRequestDispatcher("/WEB-INF/view/listemployee.jsp").forward(request, response);
 
 		
-		}
+		//}
 	}
 
 	/**

@@ -36,19 +36,19 @@ public class ListEmplUserController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		HttpSession session = request.getSession(false);
-		if (session == null) {
-			
-			request.getServletContext().getRequestDispatcher("/index.html").forward(request, response);
-		} else {
-			
+//		HttpSession session = request.getSession(false);
+//		if (session == null) {
+//			
+//			request.getServletContext().getRequestDispatcher("/index.html").forward(request, response);
+//		} else {
+//			
 			List<Employee> employees = eService.findAll();
 			request.setAttribute("employees", employees);
 			employees.forEach(System.out::println);
 			request.getServletContext().getRequestDispatcher("/WEB-INF/view/listemployeeUser.jsp").forward(request, response);
 
 		
-		}
+//		}
 	}
 
 	/**
