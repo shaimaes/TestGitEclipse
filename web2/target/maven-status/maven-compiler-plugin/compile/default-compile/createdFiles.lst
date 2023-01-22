@@ -12,11 +12,13 @@ fr\formation\inti\controller\ListEmplUserController.class
 fr\formation\inti\controller\EmployeeController.class
 fr\formation\inti\dao\UserDaoImpl.class
 fr\formation\inti\controller\filter\ExampleFilter.class
+fr\formation\inti\controller\filter\ExampleFilter$URL.class
 fr\formation\inti\controller\AffchListUser.class
 fr\formation\inti\controller\AddEmployeeController.class
 fr\formation\inti\controller\ConnexionController.class
 fr\formation\inti\dao\EmployeeDao.class
 fr\formation\inti\controller\DeleteController.class
+fr\formation\inti\controller\filter\ExampleFilter$CSS.class
 fr\formation\inti\controller\ContactController.class
 fr\formation\inti\controller\ErrorController.class
 fr\formation\inti\dao\GenericDaoImpl.class
